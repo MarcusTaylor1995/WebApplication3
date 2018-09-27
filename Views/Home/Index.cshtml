@@ -1,0 +1,16 @@
+﻿@model WebApplication3.Models.IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1> Taylor Online Shopping</h1>
+
+<p>Welcome!</p>
+
+<h2>My Database</h2>
+<div class="data">
+    @foreach (Database col in Model.Data)
+    {
+        await Html.RenderPartialAsync("DatabasePartialView", col);
+    }
+</div>
